@@ -1,0 +1,17 @@
+{
+  "d1": 0.001,
+  "gamma": 0.005,
+  "eta": 10.0,
+  "d2": 0.001,
+  "alpha": 0.1,
+  "beta": 0.0,
+  "epsilon": 0.0025,
+  "support_radius": 0.1,
+  "box_length": 1.0,
+  "grid_size": 101,
+  "dt": 0.01,
+  "final_time": 4.0,
+  "save_every": 100,
+  "output_dir": "runs/fdm_101",
+  "enable_x64": false
+}

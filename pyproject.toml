@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cancer-sipf"
+version = "0.1.0"
+description = "GPU-capable JAX implementation of SIPF for a cancer-cell HAD system"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  {name = "Boyi Hu"},
+  {name = "Zhongjian Wang"},
+  {name = "Jack Xin"},
+  {name = "Zhiwen Zhang"}
+]
+dependencies = [
+  "jax>=0.4.28",
+  "numpy>=1.23",
+  "scipy>=1.9"
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.6"]
+test = ["pytest>=7"]
+
+[project.scripts]
+cancer-sipf = "cancer_sipf.cli:main"
+cancer-sipf-plot = "cancer_sipf.cli:plot_main"
+cancer-fdm = "cancer_sipf.experiment_cli:fdm_main"
+cancer-radial = "cancer_sipf.experiment_cli:radial_main"
+cancer-radialize = "cancer_sipf.experiment_cli:radialize_main"
+cancer-fdm-comparison = "cancer_sipf.experiment_cli:comparison_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
